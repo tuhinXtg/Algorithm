@@ -20,7 +20,6 @@ int main() {
         int a, b;
         cin >> a >> b;
         adj_mat[a][b] = 1;
-        adj_mat[b][a] = 1;
     }
     for (int i = 0; i < n; i++)
     {
