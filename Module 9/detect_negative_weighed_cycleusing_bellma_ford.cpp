@@ -30,26 +30,17 @@ void bellman_ford()
             }
         }
     }
-    bool cycle = false;
     for(auto ed : edge_lst)
-    {
-        int a,b,c;
-        a = ed.a;
-        b = ed.b;
-        c = ed.c;
-        if(dis[a]!=INT_MAX && dis[a]+c<dis[b])
         {
-            cycle = true;
-            break;
+            int a,b,c;
+            a = ed.a;
+            b = ed.b;
+            c = ed.c;
+            if(dis[a]!=INT_MAX && dis[a]+c<dis[b])
+            {
+                dis[b] = dis[a]+c;
+            }
         }
-    }
-    if(cycle) 
-        cout << "Negatice weighed cycle detected " << endl;
-    else 
-    {
-        for (int i = 0; i < n; i++)
-            cout << i << " -> " << dis[i] << endl;
-    }
 }
 int main() {
     cin >> n >> e;
@@ -65,5 +56,10 @@ int main() {
     }
     dis[0] = 0;
     bellman_ford();
+    for (int i = 0; i < n; i++)
+    {
+        cout << i << " -> " << dis[i] << endl;
+    }
+    
     return 0;
 }
