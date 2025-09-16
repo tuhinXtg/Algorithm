@@ -39,6 +39,7 @@ int main() {
         int a,b,c;
         cin >> a >> b >> c;
         edge_lst.push_back(Edge(a,b,c));
+        // edge_lst.push_back(Edge(b,a,c)); applicable when graph is undirected.
     }
     for (int i = 0; i < n; i++)
     {
